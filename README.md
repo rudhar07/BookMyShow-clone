@@ -1,4 +1,4 @@
-# BookMyShow Clone — Full-Stack Assignment
+# BookMyShow Clone — Full-Stack Project
 
 A clone of BookMyShow: **Next.js** frontend, **FastAPI** backend, **SQLite** database.
 The heart of the project is the **booking subsystem** — designing a database and

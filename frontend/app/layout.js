@@ -13,7 +13,7 @@ import { AuthProvider } from "./components/AuthContext";
 
 export const metadata = {
   title: "BookMyShow Clone",
-  description: "Movie ticket booking — full-stack assignment",
+  description: "Movie ticket booking — full-stack project",
   // Browser-tab icon = BookMyShow's red ticket mark (icon-bms-logo-small).
   icons: { icon: "/bms-logo-icon.svg" },
 };

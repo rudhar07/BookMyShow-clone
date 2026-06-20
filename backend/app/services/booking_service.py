@@ -2,7 +2,7 @@
 booking_service.py — THE CONCURRENCY STORY (most important code to defend)
 ==========================================================================
 
-The whole assignment hinges on one question:
+The whole project hinges on one question:
 
     "Two users click the same seat at the same millisecond. How do you ensure
      exactly one of them gets it?"
@@ -176,7 +176,7 @@ def confirm_booking(
                     f"Lock on seat {s.id} is invalid or expired — please reselect."
                 )
 
-        # Find or create the user (no auth in the assignment).
+        # Find or create the user (no auth in this project).
         user = db.query(models.User).filter(models.User.email == user_email).first()
         if user is None:
             user = models.User(name=user_name, email=user_email)

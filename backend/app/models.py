@@ -1,5 +1,5 @@
 """
-models.py — THE DATABASE SCHEMA (the heart of this assignment)
+models.py — THE DATABASE SCHEMA (the heart of this project)
 ==============================================================
 
 Each Python class below = one SQL table. SQLAlchemy (our ORM) translates

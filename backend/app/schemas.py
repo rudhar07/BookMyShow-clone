@@ -109,7 +109,7 @@ class LockResponse(BaseModel):
 class ConfirmRequest(BaseModel):
     cart_token: str               # proves you hold the locks
     show_seat_ids: List[int]
-    # In a real app the user comes from auth. For the assignment we accept basic
+    # In a real app the user comes from auth. For this project we accept basic
     # contact details and create/find the user.
     user_name: str
     user_email: EmailStr

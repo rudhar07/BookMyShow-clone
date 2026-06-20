@@ -9,4 +9,4 @@ SQLAlchemy==2.0.36        # the ORM: lets us write Python classes instead of raw
 pydantic==2.10.4          # request/response validation (FastAPI uses it under the hood)
 
 # Note: SQLite itself needs NO install — it ships inside Python's standard library.
-# That is a big reason it's perfect for an assignment: zero setup, one file on disk.
+# That is a big reason it's perfect for a project like this: zero setup, one file on disk.

@@ -5,7 +5,7 @@ seed.py — create the tables and fill them with realistic demo data.
 Run with:  python -m app.seed     (from the backend/ folder)
 
 WHAT it does, in order:
-  1. Drop + recreate every table (clean slate each run — fine for an assignment).
+  1. Drop + recreate every table (clean slate each run — fine for local development).
   2. Insert a city, movies (matching the BookMyShow screenshot), venues, screens.
   3. Generate a physical seat grid for each screen.
   4. Create shows (a movie playing on a screen at a time).
