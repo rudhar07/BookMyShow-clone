@@ -5,7 +5,6 @@ The heart of the project is the **booking subsystem** — designing a database a
 flow that guarantees *no seat is ever sold twice*, even when many users click at
 the same instant.
 
-This README is written so you can **explain every decision to an interviewer**.
 
 ---
 
