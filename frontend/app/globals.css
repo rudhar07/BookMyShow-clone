@@ -1,0 +1,415 @@
+/* globals.css — site-wide styling, tuned to BookMyShow's look.
+   Colours pulled from the TOON file: brand pink #dc354b / #eb4e62,
+   dark footer #333, text #333/#666, Roboto font. */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: Roboto, Arial, sans-serif;
+  color: #333;
+  background: #f2f5f9;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.container { max-width: 1240px; margin: 0 auto; padding: 0 16px; }
+
+/* ---------- Header ---------- */
+.header { background: #fff; border-bottom: 1px solid #eee; }
+.header-top {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 20px; padding: 12px 0;
+}
+.logo { font-size: 28px; font-weight: 800; color: #222; letter-spacing: -1px; }
+.logo span { color: #dc354b; }
+.search {
+  flex: 1; max-width: 549px; display: flex; align-items: center; gap: 8px;
+  border: 1px solid #ddd; border-radius: 4px; padding: 9px 12px; color: #999;
+  font-size: 14px; background: #fff;
+}
+.header-right { display: flex; align-items: center; gap: 20px; }
+.city { font-size: 14px; color: #1a1a1a; cursor: pointer; }
+.signin {
+  background: #dc354b; color: #fff; border: none; border-radius: 4px;
+  padding: 7px 22px; font-size: 14px; cursor: pointer;
+}
+
+/* Signed-in chip + dropdown */
+.auth-chip-wrap { position: relative; }
+.auth-chip { font-size: 14px; color: #1a1a1a; cursor: pointer; font-weight: 500; }
+.auth-menu {
+  position: absolute; top: 28px; right: 0; min-width: 180px; background: #fff;
+  border: 1px solid #eee; border-radius: 6px; box-shadow: 0 4px 16px rgba(0,0,0,.12);
+  z-index: 60; overflow: hidden;
+}
+.auth-menu-email { padding: 10px 14px; font-size: 12px; color: #888; border-bottom: 1px solid #eee; word-break: break-all; }
+.auth-menu-item { padding: 10px 14px; font-size: 14px; color: #dc354b; cursor: pointer; }
+.auth-menu-item:hover { background: #faf0f2; }
+
+/* sub-nav bar */
+.subnav { background: #f5f5f5; border-bottom: 1px solid #e5e5e5; }
+.subnav-inner { display: flex; justify-content: space-between; }
+.subnav a { font-size: 14px; padding: 10px 10px; color: #333; cursor: pointer; }
+.subnav a:first-child { padding-left: 0; }
+.subnav-group { display: flex; }
+.subnav-group.right a { font-size: 12px; padding: 12px; }
+
+/* ---------- Section heading ---------- */
+.section { padding: 28px 0; }
+.section-head {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;
+}
+.section-head h2 { font-size: 24px; font-weight: 700; color: #222; }
+.see-all { color: #dc3558; font-size: 14px; cursor: pointer; }
+
+/* ---------- Movie grid / cards ---------- */
+.movie-grid {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px;
+}
+.card { cursor: pointer; }
+.card-poster {
+  position: relative; width: 100%; aspect-ratio: 2/3; border-radius: 8px;
+  overflow: hidden; background: linear-gradient(135deg,#ddd,#f2f2f2);
+}
+.card-poster img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.promoted {
+  position: absolute; top: 8px; left: 0; background: #eb4e62; color: #fff;
+  font-size: 11px; padding: 3px 8px; border-radius: 0 4px 4px 0; font-weight: 500;
+}
+.card-rating {
+  position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,.6);
+  color: #fff; font-size: 13px; padding: 6px 8px; display: flex; gap: 6px; align-items: center;
+}
+.card-title { margin-top: 8px; font-size: 18px; font-weight: 500; color: #222; }
+.card-sub { font-size: 14px; color: #666; margin-top: 2px; }
+
+/* ---------- Carousel banner ---------- */
+.banner {
+  width: 100%; height: 297px; border-radius: 10px; overflow: hidden; margin-top: 16px;
+  background: #2b0a0f;
+}
+.banner img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.banner-wrap { position: relative; margin-top: 16px; }
+.banner-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 40px; height: 46px; background: rgba(0,0,0,.4); color: #fff;
+  border: none; cursor: pointer; font-size: 18px; display: flex;
+  align-items: center; justify-content: center; z-index: 2;
+}
+.banner-arrow.left { left: 0; border-radius: 0 6px 6px 0; }
+.banner-arrow.right { right: 0; border-radius: 6px 0 0 6px; }
+.banner-dots {
+  position: absolute; bottom: 12px; left: 0; right: 0;
+  display: flex; justify-content: center; gap: 6px; z-index: 2;
+}
+.banner-dots .dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(255,255,255,.5); cursor: pointer;
+}
+.banner-dots .dot.active { background: #fff; transform: scale(1.2); }
+
+/* Stream promo strip — s83 */
+.stream-strip { margin: 32px 0; border-radius: 8px; overflow: hidden; }
+.stream-strip img { width: 100%; display: block; }
+
+/* ---------- Movie detail / shows ---------- */
+.detail-hero { background: #1a1a1a; color: #fff; padding: 32px 0; }
+.detail-hero .container { display: flex; gap: 24px; }
+.detail-poster { width: 220px; border-radius: 10px; flex-shrink: 0; }
+.detail-poster img { width: 100%; border-radius: 10px; display: block; }
+.detail-meta h1 { font-size: 34px; margin-bottom: 14px; }
+.chip {
+  display: inline-block; background: rgba(255,255,255,.15); padding: 6px 12px;
+  border-radius: 6px; margin: 0 8px 8px 0; font-size: 14px;
+}
+
+.venue-card {
+  background: #fff; border-radius: 8px; padding: 18px 20px; margin-bottom: 12px;
+  display: flex; justify-content: space-between; align-items: center; gap: 20px;
+}
+.venue-name { font-size: 16px; font-weight: 500; color: #333; }
+.venue-addr { font-size: 13px; color: #888; margin-top: 4px; }
+.showtimes { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* Breadcrumb — TOON s135 (Home › Movies › … › Title) */
+.crumbs { font-size: 12px; color: #404040; padding: 12px 16px; }
+.crumbs a { color: #404040; }
+.crumbs a:hover { text-decoration: underline; }
+.crumbs .sep { color: #999; margin: 0 6px; }
+
+/* "Change Location" empty-state — TOON s131/s132/s133 */
+.change-loc { text-align: center; padding: 32px; margin: 30px 0; }
+.change-loc .q { font-weight: 500; line-height: 24px; }
+.change-loc button {
+  margin-top: 24px; background: #fff; color: #dc354b; border: 0.8px solid #dc354b;
+  border-radius: 8px; padding: 6px 16px; font-size: 14px; cursor: pointer;
+}
+
+/* Showtimes-page white header — TOON s34 / s35 / s36 / s37 / s38 / s39 */
+.mv-header { background: #fff; border-bottom: 1px solid #d0d5e6; }
+.mv-header-inner { padding: 20px 16px 16px; }
+.mv-title { font-size: 32px; font-weight: 500; color: #333; line-height: 36px; }
+.mv-meta { display: flex; flex-wrap: wrap; gap: 6px; padding-top: 12px; }
+.meta-pill {
+  border: 0.8px solid #666; color: #666; border-radius: 16px;
+  padding: 2px 8px; font-size: 12px; line-height: 16px;
+}
+.meta-genre {
+  border: 0.8px solid #666; color: #666; border-radius: 12px;
+  padding: 2px 8px; font-size: 12px; cursor: pointer;
+}
+
+/* Cinema row extras — TOON s90 (icon, badges, cancellation) */
+.cine-left { display: flex; align-items: flex-start; gap: 10px; }
+.cine-icon {
+  width: 36px; height: 36px; border-radius: 6px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: #f2f2f2; font-size: 18px;
+}
+.cine-badges { display: flex; gap: 8px; margin-top: 8px; }
+.cine-badge {
+  font-size: 9px; color: #666; border: 0.6px solid #ccc; border-radius: 3px;
+  padding: 2px 6px; letter-spacing: .3px;
+}
+.cancellation { font-size: 11px; color: #1ea83c; margin-top: 10px; }
+.cancellation.no { color: #999; }
+.cine-icon img { width: 36px; height: 36px; object-fit: contain; }
+/* tiny subtitle-language superscript on a showtime pill — TOON s112 / .p2 */
+.pill-lang { font-size: 8px; font-weight: 700; vertical-align: super; margin-left: 2px; }
+.pill.green .pill-lang { color: #1fad3e; }
+.pill.amber .pill-lang { color: #b8860b; }
+.pill.grey .pill-lang { color: #b3b3b3; }
+
+/* Date selector strip — TOON s40 (sticky) / s43–s51 */
+.datebar { background: #fff; border-bottom: 1px solid #d0d5e6; position: sticky; top: 0; z-index: 5; box-shadow: 0 2px 4px rgba(0,0,0,.08); }
+.datebar-inner { display: flex; gap: 8px; padding: 12px 16px; overflow-x: auto; }
+.datepill {
+  display: flex; flex-direction: column; align-items: center; min-width: 56px;
+  padding: 6px 8px; border: none; border-radius: 8px; background: #fff;
+  cursor: pointer; color: #666;
+}
+.datepill .dp-wd { font-size: 11px; color: #aaa; }
+.datepill .dp-day { font-size: 18px; font-weight: 700; line-height: 22px; }
+.datepill .dp-mo { font-size: 11px; }
+.datepill.active { background: #eb4e62; }
+.datepill.active .dp-wd, .datepill.active .dp-day, .datepill.active .dp-mo { color: #fff; }
+
+/* Showtime pills, colour-coded by availability — TOON s102/s122/s105 */
+.pill {
+  display: flex; flex-direction: column; align-items: center; min-width: 92px;
+  padding: 6px 12px; border-radius: 4px; background: #fff; cursor: pointer;
+  border: 1px solid #1fad3e; border-left-width: 4px;
+}
+.pill .pill-time { font-size: 13px; font-weight: 500; }
+.pill .pill-sub { font-size: 9px; }
+.pill.green { border-color: #1fad3e; color: #1fad3e; }
+.pill.amber { border-color: #f1b103; color: #b8860b; }
+.pill.grey  { border-color: #b3b3b3; color: #b3b3b3; cursor: not-allowed; }
+.pill:not(.grey):hover { background: #f4fff6; }
+
+/* Legend — TOON s78–s82 */
+.leg { display: flex; gap: 24px; margin-bottom: 16px; font-size: 12px; color: #666; }
+.leg span { display: flex; align-items: center; gap: 6px; }
+.leg .dot, .pill ~ .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.dot.green { background: #40d461; }
+.dot.amber { background: #e8a900; }
+.dot.grey  { background: #b3b3b3; }
+
+/* ---------- Seat map ---------- */
+.seat-page { max-width: 900px; margin: 0 auto; padding: 24px 16px; }
+.screen-banner {
+  text-align: center; margin: 40px auto 32px; max-width: 600px;
+}
+.screen-bar {
+  height: 8px; background: #ccc; border-radius: 50%;
+  box-shadow: 0 6px 16px rgba(0,0,0,.25); margin-bottom: 6px;
+}
+.screen-label { font-size: 12px; color: #999; letter-spacing: 2px; }
+
+.seat-section-label { font-size: 13px; color: #666; margin: 18px 0 10px; }
+.seat-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; justify-content: center; }
+.row-label { width: 20px; font-size: 12px; color: #999; }
+.seat {
+  width: 26px; height: 26px; border: 1px solid #1ea83c; border-radius: 4px;
+  font-size: 11px; color: #1ea83c; cursor: pointer; background: #fff;
+  display: flex; align-items: center; justify-content: center;
+}
+.seat.selected { background: #1ea83c; color: #fff; }
+.seat.booked { background: #eee; border-color: #ccc; color: #ccc; cursor: not-allowed; }
+.seat.locked { background: #ffe9b3; border-color: #e0b94e; color: #b8860b; cursor: not-allowed; }
+.seat.gap { border: none; background: transparent; cursor: default; }
+
+.legend { display: flex; gap: 24px; justify-content: center; margin: 24px 0; font-size: 12px; color: #666; }
+.legend span { display: flex; align-items: center; gap: 6px; }
+.legend .box { width: 16px; height: 16px; border-radius: 3px; display: inline-block; }
+
+/* sticky pay bar */
+.paybar {
+  position: sticky; bottom: 0; background: #fff; border-top: 1px solid #eee;
+  padding: 16px; text-align: center; box-shadow: 0 -2px 8px rgba(0,0,0,.08);
+}
+.btn-primary {
+  background: #dc354b; color: #fff; border: none; border-radius: 6px;
+  padding: 12px 40px; font-size: 16px; font-weight: 600; cursor: pointer;
+}
+.btn-primary:disabled { background: #f1a9b4; cursor: not-allowed; }
+
+/* ---------- Modal ---------- */
+.overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,.5);
+  display: flex; align-items: center; justify-content: center; z-index: 50;
+}
+.modal { background: #fff; border-radius: 10px; padding: 28px; width: 380px; }
+.modal h3 { margin-bottom: 16px; }
+.modal label { display: block; font-size: 13px; color: #666; margin: 12px 0 4px; }
+.modal input {
+  width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;
+}
+.modal-actions { display: flex; gap: 10px; margin-top: 20px; }
+.btn-ghost { flex: 1; background: #eee; border: none; border-radius: 6px; padding: 12px; cursor: pointer; }
+
+/* ---------- Ticket ---------- */
+.ticket {
+  max-width: 480px; margin: 40px auto; background: #fff; border-radius: 12px;
+  overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.1);
+}
+.ticket-head { background: #1ea83c; color: #fff; padding: 20px 24px; }
+.ticket-body { padding: 24px; }
+.ticket-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px dashed #eee; }
+.ticket-row span:first-child { color: #888; font-size: 14px; }
+.ticket-total { font-size: 20px; font-weight: 700; margin-top: 16px; }
+
+.msg-error { color: #dc354b; font-size: 14px; margin: 12px 0; text-align: center; }
+.loading { text-align: center; padding: 60px; color: #888; }
+
+/* ---------- Search overlay (BMS-style) ---------- */
+/* Opaque light backdrop (the page colour) — fully hides the page behind, exactly
+   like the real BMS search, instead of a translucent scrim that leaks the page. */
+.search-overlay {
+  position: fixed; inset: 0; background: #f2f5f9; z-index: 100;
+  overflow-y: auto;
+}
+.search-panel { position: relative; background: #fff; padding: 16px 0; box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+/* Search input stays centred; the ✕ is pinned to the top-right of the viewport. */
+.search-top {
+  display: flex; align-items: center; max-width: 960px; margin: 0 auto; padding: 0 16px;
+}
+.search-input {
+  flex: 1; display: flex; align-items: center; gap: 8px; background: #f5f5f5;
+  border-radius: 24px; padding: 12px 20px;
+}
+.search-input input { flex: 1; border: none; outline: none; background: transparent; font-size: 16px; }
+.search-close {
+  position: absolute; top: 26px; right: 28px;
+  font-size: 22px; color: #333; cursor: pointer; padding: 4px 8px;
+}
+.search-chips {
+  display: flex; gap: 12px; max-width: 960px; margin: 16px auto 0; padding: 0 16px;
+  overflow-x: auto;
+}
+.search-chip {
+  border: 1px solid #dc354b; color: #dc354b; border-radius: 20px; padding: 6px 18px;
+  font-size: 14px; white-space: nowrap; cursor: pointer;
+}
+.search-chip.active { background: #fff; font-weight: 500; }
+
+.search-results { max-width: 960px; margin: 0 auto; padding: 0 16px 40px; }
+.search-results-label { color: #dc354b; font-size: 13px; font-weight: 500; margin: 16px 0 4px; }
+.search-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  background: #fff; padding: 16px; border-bottom: 1px solid #eee; cursor: pointer;
+}
+.search-row:hover { background: #faf0f2; }
+.search-row-title { font-size: 16px; color: #333; }
+.search-row-sub { font-size: 12px; color: #999; margin-top: 2px; }
+.search-row-icon { font-size: 18px; color: #999; flex-shrink: 0; }
+.search-empty { background: #fff; padding: 24px 16px; color: #999; text-align: center; }
+
+/* ---------- City picker modal — TOON s30/s1/s4/s13/s20/s21 ---------- */
+.city-overlay {
+  position: fixed; inset: 0; background: rgba(34,34,34,.8);
+  display: flex; justify-content: center; align-items: flex-start; z-index: 100;
+}
+.city-modal {
+  background: #fff; border-radius: 8px; width: 720px; max-width: 92%;
+  margin-top: 60px; padding: 16px; max-height: 80vh; overflow: hidden auto;
+}
+.city-search {
+  display: flex; align-items: center; gap: 8px; padding: 10px 12px;
+  border: 1px solid #e5e5e5; border-radius: 4px;
+}
+.city-search input { border: none; outline: none; font-size: 14px; flex: 1; }
+.city-detect {
+  display: flex; align-items: center; gap: 10px; padding: 12px 4px;
+  color: #dc354b; font-size: 14px; border-bottom: 1px solid #ddd; cursor: pointer;
+}
+.city-pop-label { text-align: center; font-size: 14px; padding: 12px 0 4px; color: #333; }
+.city-grid {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 16px; padding-bottom: 4px;
+}
+.city-item {
+  width: 84px; text-align: center; cursor: pointer; padding: 8px 4px; border-radius: 6px;
+}
+.city-item img { width: 56px; height: 56px; object-fit: contain; }
+.city-item span { display: block; font-size: 13px; color: #666; margin-top: 4px; }
+.city-item small { display: block; font-size: 9px; color: #bbb; }
+.city-item:hover { background: #faf0f2; }
+.city-item.active span { color: #dc354b; font-weight: 600; }
+.city-item.disabled { cursor: not-allowed; opacity: .45; }
+.city-item.disabled:hover { background: none; }
+.city-viewall {
+  text-align: center; color: #dc354b; font-size: 14px; padding: 12px 0 4px; cursor: pointer;
+}
+
+/* ---------- Footer (modelled on the TOON: dark, multi-section) ---------- */
+.footer { margin-top: 24px; }
+
+/* "List your Show" CTA bar — s94 */
+.foot-cta { background: #333; color: #fff; }
+.foot-cta-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px; gap: 16px;
+}
+.foot-cta-left { display: flex; align-items: center; gap: 16px; }
+.foot-hut { font-size: 32px; }
+.foot-cta b { margin-right: 8px; }
+.foot-cta .sub { color: #ccc; font-size: 14px; }
+.foot-cta button {
+  background: #dc354b; color: #fff; border: none; border-radius: 8px;
+  padding: 14px 22px; font-weight: 500; cursor: pointer; white-space: nowrap;
+}
+
+/* support row — s102 */
+.foot-support { background: #404040; }
+.foot-support-inner {
+  display: flex; padding: 16px; gap: 8px;
+}
+.foot-support a {
+  flex: 1; text-align: center; color: #ccc; font-size: 11px;
+  letter-spacing: .3px; cursor: pointer;
+}
+
+/* SEO link section — s105 */
+.foot-seo { background: #333; color: #808080; }
+.foot-seo-inner { padding: 24px 16px; }
+.foot-group { padding-top: 24px; }
+.foot-group h4 {
+  color: #999; font-size: 12px; text-transform: uppercase;
+  letter-spacing: .3px; margin-bottom: 20px; font-weight: 400;
+}
+.foot-links { display: flex; flex-wrap: wrap; column-gap: 6px; }
+.foot-links a {
+  color: #808080; font-size: 11px; line-height: 16px; margin-bottom: 6px;
+  padding-right: 6px; border-right: 1px solid #808080; cursor: pointer;
+}
+.foot-links a:last-child { border-right: none; }
+
+/* logo + social — s112 */
+.foot-bottom { background: #333; padding: 20px 24px 46px; text-align: center; }
+.foot-logo { display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
+.foot-logo .logo { color: #fff; font-size: 22px; font-weight: 800; }
+.foot-logo .logo span { color: #dc354b; }
+.foot-social { display: flex; gap: 16px; justify-content: center; font-size: 22px; }
+.foot-social a { cursor: pointer; }
+.foot-copy { color: #666; font-size: 12px; margin-top: 24px; line-height: 18px; }

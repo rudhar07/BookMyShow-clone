@@ -1,0 +1,44 @@
+# ===========================================================================
+# .gitignore — files Git should NOT track or push.
+# Rule of thumb: ignore anything (a) generated, (b) huge, or (c) secret/local.
+# NOTE: comments must be on their OWN line (a trailing # is part of the pattern).
+# ===========================================================================
+
+# --- Python / FastAPI backend ---
+# virtual environment (recreated from requirements.txt)
+backend/.venv/
+.venv/
+# compiled Python bytecode
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# --- SQLite database (generated) ---
+# regenerate after clone with:  cd backend && python -m app.seed
+*.db
+*.db-shm
+*.db-wal
+*.sqlite3
+
+# --- Node / Next.js frontend ---
+# dependencies (recreated from package-lock.json)
+node_modules/
+# Next.js build output
+.next/
+frontend/.next/
+out/
+build/
+next-env.d.ts
+
+# --- Environment / secrets (local only) ---
+.env
+.env.local
+.env*.local
+
+# --- Editor / OS noise ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log

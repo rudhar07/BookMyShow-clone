@@ -1,0 +1,16 @@
+{
+  "comment": "Frontend manifest. 'next' is the framework; 'react'/'react-dom' are its engine. Scripts: dev=hot-reload server, build+start=production.",
+  "name": "bookmyshow-clone-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start -p 3000"
+  },
+  "dependencies": {
+    "next": "^14.2.35",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  }
+}
